@@ -9,6 +9,8 @@ public class NpcGO : MonoBehaviour
     public GameObject UIpressToGive;
     public Image UIHearth;
     private float currentLike = 0;
+    public Transform SpawnPoint;
+    public GameObject ShipPiecePrefab;
 
     private void Start()
     {
@@ -17,8 +19,8 @@ public class NpcGO : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.LogWarning("OnTriggerEnter");
-        if (GameManager.player.itemInHand!=null)
+        
+        if (GameManager.player.itemInHand!=null && GameManager.player.itemInHand.resType == RessourceType.Wood)
         {
             UIpressToGive.SetActive(true);
         }
@@ -32,12 +34,13 @@ public class NpcGO : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy)
+        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy )
         {
             GameManager.player.ItemIsGiven();
             currentLike += 0.33f;
             UIHearth.fillAmount = currentLike;
             UIpressToGive.SetActive(false);
+            Instantiate(ShipPiecePrefab, SpawnPoint);
         }
 
       
