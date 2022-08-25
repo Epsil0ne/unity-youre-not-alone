@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static PlayerGO player;
+    public static List<RessourceGO> ressourcesList = new List<RessourceGO>();
     // Start is called before the first frame update
     void Start()
     {

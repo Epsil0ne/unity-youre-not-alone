@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class RessourceGO : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
-        
+        GameManager.ressourcesList.Add(this);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnDestroy()
     {
-        
+        GameManager.ressourcesList.Remove(this);
     }
 }
