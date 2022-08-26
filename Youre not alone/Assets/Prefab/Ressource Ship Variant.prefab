@@ -8,9 +8,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 398577006830480300, guid: bcab06d46ef09f44d83676d715135488, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 398577006830480300, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
+    - target: {fileID: 2004183842443380561, guid: bcab06d46ef09f44d83676d715135488, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3598069243134263422, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_Name
       value: Ressource Ship Variant
@@ -57,6 +65,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5002041939847304577, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318333800244308172, guid: bcab06d46ef09f44d83676d715135488, type: 3}
+      propertyPath: resType
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
