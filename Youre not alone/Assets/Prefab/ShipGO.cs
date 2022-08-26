@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,6 @@ public class ShipGO : MonoBehaviour
     public Image UIHelp;
     public Transform[] spawnPoint = new Transform[3];
 
-    //  public Image UIpieces;
 
 
     private void Start()
@@ -40,5 +40,9 @@ public class ShipGO : MonoBehaviour
         GameManager.ship = null;
     }
 
-
+    internal void HelpAdded()
+    {
+        currentHelp += 1;
+        UIHelp.fillAmount = (float)currentHelp / maxHelp;
+    }
 }

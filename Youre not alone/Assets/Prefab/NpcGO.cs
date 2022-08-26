@@ -14,6 +14,7 @@ public class NpcGO : MonoBehaviour
     public Transform SpawnPoint;
     public GameObject ShipPiecePrefab;
     public string[] QuestTexts = new string[4];
+    public RessourceType[] QuestItem = new RessourceType[3];
     public TMP_Text DialogText;
 
     private void Start()
@@ -25,7 +26,7 @@ public class NpcGO : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         
-        if (GameManager.player.itemInHand!=null && GameManager.player.itemInHand.resType == RessourceType.Wood)
+        if (GameManager.player.itemInHand!=null && GameManager.player.itemInHand.resType != RessourceType.Ship)
         {
             UIpressToGive.SetActive(true);
         }
@@ -39,7 +40,7 @@ public class NpcGO : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy )
+        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy && GameManager.player.itemInHand.resType == QuestItem[currentLike])
         {
             GameManager.player.ItemIsGiven();
             currentLike += 1;
@@ -52,6 +53,7 @@ public class NpcGO : MonoBehaviour
             {
                 transform.position = GameManager.ship.spawnPoint[id].position;
                 transform.rotation = GameManager.ship.spawnPoint[id].rotation;
+                GameManager.ship.HelpAdded();
             }         
         }
     }

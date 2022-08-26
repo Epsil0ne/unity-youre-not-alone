@@ -25,4 +25,4 @@ public class RessourceGO : MonoBehaviour
     }
 }
 
-public enum RessourceType {Ship, Wood };
+public enum RessourceType {Ship, Wood, Fruit, Iron };
