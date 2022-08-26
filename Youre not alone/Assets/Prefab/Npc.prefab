@@ -266,6 +266,7 @@ MonoBehaviour:
   - Thanks, but we're still cold
   - More wood please?
   - Thanks for your help, now that my family is safe I'll help you fix your ship
+  DialogText: {fileID: 755847529968897455}
 --- !u!33 &2787289444823274484
 MeshFilter:
   m_ObjectHideFlags: 0

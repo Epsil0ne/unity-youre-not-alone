@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,11 +14,13 @@ public class NpcGO : MonoBehaviour
     public Transform SpawnPoint;
     public GameObject ShipPiecePrefab;
     public string[] QuestTexts = new string[4];
+    public TMP_Text DialogText;
 
     private void Start()
     {
         UIpressToGive.SetActive(false);
         UIHearth.fillAmount = (float)currentLike / maxLike;
+        DialogText.text = QuestTexts[currentLike];
     }
     void OnTriggerEnter(Collider other)
     {
@@ -42,15 +45,14 @@ public class NpcGO : MonoBehaviour
             currentLike += 1;
             UIHearth.fillAmount = (float)currentLike/maxLike;
             UIpressToGive.SetActive(false);
+
+            Instantiate(ShipPiecePrefab, SpawnPoint.position, SpawnPoint.rotation);
+            DialogText.text = QuestTexts[currentLike];
             if (currentLike == maxLike)
             {
                 transform.position = GameManager.ship.spawnPoint[id].position;
                 transform.rotation = GameManager.ship.spawnPoint[id].rotation;
-            }
-         
-            Instantiate(ShipPiecePrefab, SpawnPoint);
+            }         
         }
-
-      
     }
 }
