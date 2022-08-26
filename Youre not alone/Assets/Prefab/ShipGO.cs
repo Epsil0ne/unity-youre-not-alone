@@ -13,13 +13,16 @@ public class ShipGO : MonoBehaviour
 
     public Image UIPieces;
     public Image UIHelp;
+    public Transform[] spawnPoint = new Transform[3];
+
     //  public Image UIpieces;
 
 
     private void Start()
     {
-        UIPieces.fillAmount = currentPieces;
-        UIHelp.fillAmount = currentHelp;
+        UIPieces.fillAmount = (float)currentPieces / maxPieces;
+        UIHelp.fillAmount = (float)currentHelp/maxHelp;
+        GameManager.ship = this;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -29,9 +32,13 @@ public class ShipGO : MonoBehaviour
             GameManager.player.ItemIsGiven();
             currentPieces += 1;
             UIPieces.fillAmount = (float)currentPieces/maxPieces;
-
         }
 
     }
- 
+    private void OnDestroy()
+    {
+        GameManager.ship = null;
+    }
+
+
 }

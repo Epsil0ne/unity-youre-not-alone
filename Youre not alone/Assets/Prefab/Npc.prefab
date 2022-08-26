@@ -255,10 +255,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3041589e05d4e374f86c0d3b67d7fdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   UIpressToGive: {fileID: 6412940581218892543}
   UIHearth: {fileID: 3134812212395095515}
   SpawnPoint: {fileID: 657004132}
   ShipPiecePrefab: {fileID: 19838791364093593, guid: c089d9e3dd94fd94da79fd140e186881, type: 3}
+  QuestTexts:
+  - Unfortunately i cant keep my family heated, because i dont have more money to
+    buy wood for the fireplace.
+  - Thanks, but we're still cold
+  - More wood please?
+  - Thanks for your help, now that my family is safe I'll help you fix your ship
 --- !u!33 &2787289444823274484
 MeshFilter:
   m_ObjectHideFlags: 0

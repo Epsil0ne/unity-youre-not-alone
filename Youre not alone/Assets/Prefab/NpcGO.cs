@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class NpcGO : MonoBehaviour
 {
-
+    public int id;
     public GameObject UIpressToGive;
     public Image UIHearth;
-    private float currentLike = 0;
+    private int currentLike = 0;
+    private int maxLike = 3;
     public Transform SpawnPoint;
     public GameObject ShipPiecePrefab;
+    public string[] QuestTexts = new string[4];
 
     private void Start()
     {
         UIpressToGive.SetActive(false);
-        UIHearth.fillAmount = currentLike;
+        UIHearth.fillAmount = (float)currentLike / maxLike;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -37,9 +39,15 @@ public class NpcGO : MonoBehaviour
         if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy )
         {
             GameManager.player.ItemIsGiven();
-            currentLike += 0.33f;
-            UIHearth.fillAmount = currentLike;
+            currentLike += 1;
+            UIHearth.fillAmount = (float)currentLike/maxLike;
             UIpressToGive.SetActive(false);
+            if (currentLike == maxLike)
+            {
+                transform.position = GameManager.ship.spawnPoint[id].position;
+                transform.rotation = GameManager.ship.spawnPoint[id].rotation;
+            }
+         
             Instantiate(ShipPiecePrefab, SpawnPoint);
         }
 
