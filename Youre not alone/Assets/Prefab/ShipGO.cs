@@ -5,8 +5,22 @@ using UnityEngine.UI;
 
 public class ShipGO : MonoBehaviour
 {
-  public  int currentPieces = 0;
-  //  public Image UIpieces;
+  public  int currentPieces ;
+  public  int maxPieces;
+
+    public int currentHelp;
+    public int maxHelp ;
+
+    public Image UIPieces;
+    public Image UIHelp;
+    //  public Image UIpieces;
+
+
+    private void Start()
+    {
+        UIPieces.fillAmount = currentPieces;
+        UIHelp.fillAmount = currentHelp;
+    }
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger ship");
@@ -14,8 +28,8 @@ public class ShipGO : MonoBehaviour
         {
             GameManager.player.ItemIsGiven();
             currentPieces += 1;
-          //  UIpieces.fillAmount = currentPieces;
-           
+            UIPieces.fillAmount = (float)currentPieces/maxPieces;
+
         }
 
     }
