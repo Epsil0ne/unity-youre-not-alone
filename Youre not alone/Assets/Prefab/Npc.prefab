@@ -168,7 +168,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 4
-  m_fontSizeMax: 72
+  m_fontSizeMax: 7
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -266,6 +266,7 @@ MonoBehaviour:
   - Thanks, but we're still cold
   - More wood please?
   - Thanks for your help, now that my family is safe I'll help you fix your ship
+  QuestItem: 000000000000000000000000
   DialogText: {fileID: 755847529968897455}
 --- !u!33 &2787289444823274484
 MeshFilter:

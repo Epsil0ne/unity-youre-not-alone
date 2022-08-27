@@ -47,17 +47,22 @@ public class PlayerGO : MonoBehaviour
         Destroy(itemInHand.gameObject);
     }
 
-    private void GrabItem(RessourceGO closeItem)
+    private void GrabItem(RessourceGO item)
     {
-        itemInHand = closeItem;
-        closeItem.GetComponent<Collider>().enabled = false;
-        closeItem.GetComponentInChildren<Canvas>().enabled = false;
+        DropItem(itemInHand);
+        itemInHand = item;
+        item.GetComponent<Collider>().enabled = false;
+        item.UIpressToGive.SetActive( false);
     }
-    private void DropItem(RessourceGO closeItem)
+    private void DropItem(RessourceGO item)
     {
+        if (item == null)        
+            return;
+        
         itemInHand = null;
-        closeItem.GetComponent<Collider>().enabled = true;
-        closeItem.GetComponentInChildren<Canvas>().enabled = true;
+        item.GetComponent<Collider>().enabled = true;
+        item.UIpressToGive.SetActive( true);
+        item.transform.position = new Vector3(item.transform.position.x, 0.3f, item.transform.position.z);
     }
 
     private void OnDestroy()

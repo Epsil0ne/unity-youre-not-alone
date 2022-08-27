@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39a84089c4754b4992f8c24649fc842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIpressToGive: {fileID: 4995617860651907377}
   resType: 1
 --- !u!33 &1367541448580609486
 MeshFilter:
@@ -386,6 +387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcf967b8c245ff04a909491153a764e6, type: 3}
+--- !u!1 &4995617860651907377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3850192960238898542, guid: fcf967b8c245ff04a909491153a764e6, type: 3}
+  m_PrefabInstance: {fileID: 8087723726482650207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7018654978597231365 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1250338667246890842, guid: fcf967b8c245ff04a909491153a764e6, type: 3}
