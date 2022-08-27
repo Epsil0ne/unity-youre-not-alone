@@ -17,12 +17,15 @@ public class NpcGO : MonoBehaviour
     public RessourceType[] QuestItem = new RessourceType[3];
     public TMP_Text DialogText;
     public GameObject particleHit;
+    public AudioClip audio_drop_item;
+    private AudioSource source;
 
     private void Start()
     {
         UIpressToGive.SetActive(false);
         UIHearth.fillAmount = (float)currentLike / maxLike;
         DialogText.text = QuestTexts[currentLike];
+        source = GetComponent<AudioSource>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -56,6 +59,8 @@ public class NpcGO : MonoBehaviour
         {
             GameManager.player.ItemIsGiven();
             currentLike += 1;
+            source.clip = audio_drop_item;
+            source.Play();
             UIHearth.fillAmount = (float)currentLike/maxLike;
             UIpressToGive.SetActive(false);
 

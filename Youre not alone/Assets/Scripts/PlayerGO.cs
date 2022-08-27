@@ -11,7 +11,9 @@ public class PlayerGO : MonoBehaviour
     public GameObject fruitPrefab;
    public GameObject particleHit;
     public CinemachineImpulseSource smallImpulse;
-
+    public AudioClip audio_grab_item;
+    public AudioClip audio_drop_item;
+    private AudioSource source;
 
     public void spawnParticle()
     {
@@ -22,6 +24,7 @@ public class PlayerGO : MonoBehaviour
     void Start()
     {
         GameManager.player = this;
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,6 +45,8 @@ public class PlayerGO : MonoBehaviour
         DropItem();
         itemInHand = item;
         item.Grab();
+        source.clip = audio_grab_item;
+        source.Play();
     }
 
    public  void DropItem()
@@ -50,6 +55,8 @@ public class PlayerGO : MonoBehaviour
             return;
 
         itemInHand.Drop();
+        source.clip = audio_drop_item;
+        source.Play();
 
         itemInHand = null;
 
