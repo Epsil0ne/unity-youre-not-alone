@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: -670444470035665918, guid: 9ead890a4da26ae4eb728d152f9b9ca7, type: 3}
     - target: {fileID: 3598069243134263422, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_Name
-      value: 'Ressource '
+      value: Ressource Fruit
       objectReference: {fileID: 0}
     - target: {fileID: 4693959129308803188, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_Camera
@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5002041939847304577, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5002041939847304577, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.97999984
       objectReference: {fileID: 0}
     - target: {fileID: 5002041939847304577, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.18
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5002041939847304577, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_LocalRotation.w

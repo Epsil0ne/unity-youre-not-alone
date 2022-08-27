@@ -7,7 +7,7 @@ public class PlayerGO : MonoBehaviour
 {
 
    public RessourceGO itemInHand = null;
-
+    public GameObject fruitPrefab;
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerGO : MonoBehaviour
         {
             float minDist = 100f;
             RessourceGO closeItem = null;
-            print("space key was pressed");
+            print("g key was pressed");
             foreach (RessourceGO item in GameManager.ressourcesList)
             {
                 float dist = Vector3.Distance(transform.position, item.transform.position);
@@ -30,7 +30,8 @@ public class PlayerGO : MonoBehaviour
                     closeItem = item;
                 }
             }
-            if (minDist<3)
+            Debug.Log(minDist);
+            if (minDist<4)
             {
                 GameManager.player.GrabItem(closeItem);
             }
@@ -42,30 +43,38 @@ public class PlayerGO : MonoBehaviour
         }
     }
 
-    internal void ItemIsGiven()
+    public void ItemIsGiven()
     {
         Destroy(itemInHand.gameObject);
     }
 
-    private void GrabItem(RessourceGO item)
+     void GrabItem(RessourceGO item)
     {
         DropItem(itemInHand);
+
+        if (item.isFruitOnCactus)
+        {
+           GameObject g =  Instantiate(fruitPrefab, item.transform.position, item.transform.rotation);
+            Destroy(item.gameObject);
+            item = g.GetComponent<RessourceGO>();
+        }
+
         itemInHand = item;
-        item.GetComponent<Collider>().enabled = false;
-        item.UIpressToGive.SetActive( false);
-    }
-    private void DropItem(RessourceGO item)
-    {
-        if (item == null)        
-            return;
-        
-        itemInHand = null;
-        item.GetComponent<Collider>().enabled = true;
-        item.UIpressToGive.SetActive( true);
-        item.transform.position = new Vector3(item.transform.position.x, 0.3f, item.transform.position.z);
+
+        item.Grab();      
     }
 
-    private void OnDestroy()
+     void DropItem(RessourceGO item)
+    {
+        if (item == null)
+            return;
+
+        itemInHand = null;
+
+        item.Drop();       
+    }
+
+     void OnDestroy()
     {
         GameManager.player = null;
     }
