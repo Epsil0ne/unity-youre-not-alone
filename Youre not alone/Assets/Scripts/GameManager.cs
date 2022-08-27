@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         {
             if (item.UIpress.activeInHierarchy)
             {
+                player.spawnParticle();
                 item.IsHit();
                 return;
             }

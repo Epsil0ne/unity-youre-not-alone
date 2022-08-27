@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,15 @@ public class PlayerGO : MonoBehaviour
 
    public RessourceGO itemInHand = null;
     public GameObject fruitPrefab;
+   public GameObject particleHit;
+    public CinemachineImpulseSource smallImpulse;
+
+
+    public void spawnParticle()
+    {
+        particleHit.GetComponent<ParticleSystem>().Play();
+        smallImpulse.GenerateImpulse();
+    }
 
     void Start()
     {
