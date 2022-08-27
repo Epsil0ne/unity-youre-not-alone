@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4469027409487111734}
   - component: {fileID: 8313145706566110243}
   m_Layer: 0
-  m_Name: CFXR Hit C 3D
+  m_Name: Particle Hit
   m_TagString: FxTemporaire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,6 +16,7 @@ public class NpcGO : MonoBehaviour
     public string[] QuestTexts = new string[4];
     public RessourceType[] QuestItem = new RessourceType[3];
     public TMP_Text DialogText;
+    public GameObject particleHit;
 
     private void Start()
     {
@@ -36,7 +37,17 @@ public class NpcGO : MonoBehaviour
     {
         UIpressToGive.SetActive(false);
     }
+    public void BeginHelping()
+    {
+        transform.SetPositionAndRotation(
+            GameManager.ship.spawnPoint[id].position, 
+            GameManager.ship.spawnPoint[id].rotation);
 
+        GameManager.ship.HelpAdded();
+
+        particleHit.SetActive(true);
+        
+    }
 
     void Update()
     {
@@ -52,9 +63,8 @@ public class NpcGO : MonoBehaviour
             DialogText.text = QuestTexts[currentLike];
             if (currentLike == maxLike)
             {
-                transform.position = GameManager.ship.spawnPoint[id].position;
-                transform.rotation = GameManager.ship.spawnPoint[id].rotation;
-                GameManager.ship.HelpAdded();
+                BeginHelping();
+               
             }         
         }
     }
