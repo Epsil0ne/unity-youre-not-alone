@@ -16,27 +16,6 @@ public class PlayerGO : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("g"))
-        {
-            float minDist = 100f;
-            RessourceGO closeItem = null;
-            print("g key was pressed");
-            foreach (RessourceGO item in GameManager.ressourcesList)
-            {
-                float dist = Vector3.Distance(transform.position, item.transform.position);
-                if (dist< minDist)
-                {
-                    minDist = dist;
-                    closeItem = item;
-                }
-            }
-            Debug.Log(minDist);
-            if (minDist<4)
-            {
-                GameManager.player.GrabItem(closeItem);
-            }
-        }
-
         if (itemInHand!=null)
         {
             itemInHand.gameObject.transform.position = transform.position + transform.forward+transform.up;
@@ -48,30 +27,23 @@ public class PlayerGO : MonoBehaviour
         Destroy(itemInHand.gameObject);
     }
 
-     void GrabItem(RessourceGO item)
+    public void GrabItem(RessourceGO item)
     {
-        DropItem(itemInHand);
-
-        if (item.isFruitOnCactus)
-        {
-           GameObject g =  Instantiate(fruitPrefab, item.transform.position, item.transform.rotation);
-            Destroy(item.gameObject);
-            item = g.GetComponent<RessourceGO>();
-        }
-
+        DropItem();
         itemInHand = item;
-
-        item.Grab();      
+        item.Grab();
     }
 
-     void DropItem(RessourceGO item)
+   public  void DropItem()
     {
-        if (item == null)
+        if (itemInHand == null)
             return;
+
+        itemInHand.Drop();
 
         itemInHand = null;
 
-        item.Drop();       
+             
     }
 
      void OnDestroy()

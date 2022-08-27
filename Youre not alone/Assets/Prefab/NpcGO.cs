@@ -40,7 +40,8 @@ public class NpcGO : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy && GameManager.player.itemInHand.resType == QuestItem[currentLike])
+        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy 
+            && GameManager.player.itemInHand.resType == QuestItem[currentLike])
         {
             GameManager.player.ItemIsGiven();
             currentLike += 1;
