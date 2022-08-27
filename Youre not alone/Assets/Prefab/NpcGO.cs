@@ -18,7 +18,9 @@ public class NpcGO : MonoBehaviour
     public TMP_Text DialogText;
     public GameObject particleHit;
     public AudioClip audio_drop_item;
+    public AudioClip[] dialogue_clip;
     private AudioSource source;
+    private AudioSource dialogue_source;
 
     private void Start()
     {
@@ -26,6 +28,7 @@ public class NpcGO : MonoBehaviour
         UIHearth.fillAmount = (float)currentLike / maxLike;
         DialogText.text = QuestTexts[currentLike];
         source = GetComponent<AudioSource>();
+        dialogue_source = GetComponent<AudioSource>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -66,6 +69,8 @@ public class NpcGO : MonoBehaviour
 
             Instantiate(ShipPiecePrefab, SpawnPoint.position, SpawnPoint.rotation);
             DialogText.text = QuestTexts[currentLike];
+            dialogue_source.clip = dialogue_clip[UnityEngine.Random.Range(0, dialogue_clip.Length)];
+            dialogue_source.Play();
             if (currentLike == maxLike)
             {
                 BeginHelping();
