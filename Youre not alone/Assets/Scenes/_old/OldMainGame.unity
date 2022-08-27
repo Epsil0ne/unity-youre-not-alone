@@ -1237,6 +1237,26 @@ PrefabInstance:
       propertyPath: QuestTexts.Array.data[3]
       value: Here is a slice of pie. And a bit of help.
       objectReference: {fileID: 0}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: eb02673f444d69847ace75580a5c6f47, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 58ad17b168b4182459ab27f4ad76baec, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 12de54d70ec05a84895806fdf000fd2d, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 02231c1633d49af4fb6a36d7f6d527d2, type: 3}
     - target: {fileID: 5543656666225057962, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
       propertyPath: m_Name
       value: NPC 3
@@ -2523,6 +2543,26 @@ PrefabInstance:
       propertyPath: QuestTexts.Array.data[3]
       value: Ok you're nice I'll help you
       objectReference: {fileID: 0}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e4a42f77314bb4d4fa85290cb096915f, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d8d4d8042126b843a2ac94ab1b839c7, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d6ba5b53f2aa55540907a70015a3fb13, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b22b782ac35e974086872f8e8538bdd, type: 3}
     - target: {fileID: 5543656666225057962, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
       propertyPath: m_Name
       value: NPC 2
@@ -4699,6 +4739,26 @@ PrefabInstance:
       propertyPath: QuestTexts.Array.data[1]
       value: Thanks, I'm hungry now
       objectReference: {fileID: 0}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 92fe90d399a1cbf40b48d5b363179457, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 97559ff3728575541b2f4c1cc94c416f, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: dd850824aff516e4a9e2ac428c0e4521, type: 3}
+    - target: {fileID: 76860372, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
+      propertyPath: dialogue_clip.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: c5b381b6fa9205440b5e29b463bb915a, type: 3}
     - target: {fileID: 2831359462735765996, guid: f5d2e57dbfe69e84b9d4af6af30ba8bb, type: 3}
       propertyPath: m_Camera
       value: 
