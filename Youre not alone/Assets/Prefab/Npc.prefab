@@ -5029,6 +5029,7 @@ MonoBehaviour:
   QuestItem: 000000000000000000000000
   DialogText: {fileID: 755847529968897455}
   particleHit: {fileID: 2059977134558987213}
+  audio_drop_item: {fileID: 8300000, guid: f2ccf303df1180c418225a4edaeeea11, type: 3}
 --- !u!136 &1988392901092109562
 CapsuleCollider:
   m_ObjectHideFlags: 0

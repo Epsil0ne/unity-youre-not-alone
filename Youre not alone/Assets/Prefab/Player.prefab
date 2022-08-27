@@ -4893,16 +4893,12 @@ MonoBehaviour:
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
-  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-  - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-  - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
-  - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
-  - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
-  - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
-  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-  - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
-  - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
+  - {fileID: 8300000, guid: feb3581bb51ca9a44aaf4deccbcae580, type: 3}
+  - {fileID: 8300000, guid: 6307db96b38927a4fada510f001f09d6, type: 3}
+  - {fileID: 8300000, guid: 2d36960939edeff4b84dcd9c1cda9071, type: 3}
+  - {fileID: 8300000, guid: 5d7d97d0ddd7fcc4f84604cdc99dab70, type: 3}
+  - {fileID: 8300000, guid: 82f368c924363864ba386ba30ab8cfb2, type: 3}
+  - {fileID: 8300000, guid: 8bfedc52a12b98e4b873514de589e713, type: 3}
   FootstepAudioVolume: 0.2
   Gravity: -15
   FallTimeout: 0.15
@@ -5067,6 +5063,8 @@ MonoBehaviour:
   fruitPrefab: {fileID: 7907567228279928129, guid: d70fb9a022853ab408a0ac4229d0c57f, type: 3}
   particleHit: {fileID: 4469027409468360438}
   smallImpulse: {fileID: 1116101393}
+  audio_grab_item: {fileID: 8300000, guid: 68b376fb3fabf9e4faca1a3e881d92fa, type: 3}
+  audio_drop_item: {fileID: 8300000, guid: f2ccf303df1180c418225a4edaeeea11, type: 3}
 --- !u!114 &1116101393
 MonoBehaviour:
   m_ObjectHideFlags: 0
