@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 4560675111504240119}
   - component: {fileID: 1778414498512382269}
   - component: {fileID: 1112291464038370330}
-  - component: {fileID: 3725543496195573393}
   m_Layer: 0
   m_Name: Destructible_Rock
   m_TagString: Untagged
@@ -166,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropPrefab: {fileID: 695692903801884537, guid: 1320ba0c4821242408732e11afbbfe32, type: 3}
   UIpress: {fileID: 3850192961386485913}
-  numberHitBeforeBreak: 3
+  numberHitBeforeBreak: 5
 --- !u!33 &4560675111504240119
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -231,19 +230,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1892647146680977690, guid: ef5b7f57c326bfb4581925716d52565e, type: 3}
---- !u!65 &3725543496195573393
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265376891300710632}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.016850743, y: 0.014663774, z: 0.014929157}
-  m_Center: {x: -0.0012333172, y: 0.00071507983, z: 0.0014025543}
 --- !u!1001 &2073646583
 PrefabInstance:
   m_ObjectHideFlags: 0
