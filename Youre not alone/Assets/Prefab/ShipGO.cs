@@ -37,31 +37,45 @@ public class ShipGO : MonoBehaviour
         Debug.Log("Trigger ship");
         if (GameManager.player.itemInHand != null && GameManager.player.itemInHand.resType == RessourceType.Ship)
         {
-            GameManager.player.ItemIsGiven();
-            currentPieces += 1;
-            spaceship_source.clip = Audio_spaceship_repair[UnityEngine.Random.Range(0, Audio_spaceship_repair.Length)];
-            spaceship_source.Play();
-            UIPieces.fillAmount = 0.3f+0.7f*((float)currentPieces/maxPieces);
-
-            if (currentPieces == maxPieces)
-            {
-                spaceship_source.clip = Audio_engine_start;
-                spaceship_source.Play();
-
-                spaceship_source.clip = Audio_engine_loop;
-                spaceship_source.PlayDelayed(Audio_engine_start.length);
-            }
+            PieceAdded();
         }
 
     }
-    private void OnDestroy()
+
+    private void PieceAdded()
     {
-        GameManager.ship = null;
+        GameManager.player.ItemIsGiven();
+        currentPieces += 1;
+        spaceship_source.clip = Audio_spaceship_repair[UnityEngine.Random.Range(0, Audio_spaceship_repair.Length)];
+        spaceship_source.Play();
+        UIPieces.fillAmount = 0.3f + 0.7f * ((float)currentPieces / maxPieces);
+
+        if (currentPieces == maxPieces)
+        {
+            GameManager.EndCondition++;
+
+            spaceship_source.clip = Audio_engine_start;
+            spaceship_source.Play();
+
+            spaceship_source.clip = Audio_engine_loop;
+            spaceship_source.PlayDelayed(Audio_engine_start.length);
+        }
     }
 
     internal void HelpAdded()
     {
         currentHelp += 1;
         UIHelp.fillAmount = 0.1f + 0.9f * ((float)currentHelp / maxHelp);
+
+        if (currentHelp == maxHelp)
+        {
+            GameManager.EndCondition++;
+        }
+    }
+
+
+    private void OnDestroy()
+    {
+        GameManager.ship = null;
     }
 }

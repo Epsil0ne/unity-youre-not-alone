@@ -12,7 +12,30 @@ public class GameManager : MonoBehaviour
     public static List<DetroyableGO> destroyableList = new();
 
     private GameManager instance = null;
-  
+    private static int endCondition = 0;
+
+    public static int EndCondition
+    {
+        get
+        {
+            return endCondition;
+        }
+
+        set
+        {
+            endCondition = value;
+            if (endCondition == 2)
+            {
+                EndGame();
+            }
+        }
+    }
+
+    private static void EndGame()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     void Start()
     {
         if (instance != null)        
