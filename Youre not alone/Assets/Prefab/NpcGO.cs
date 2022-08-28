@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -32,6 +33,9 @@ public class NpcGO : MonoBehaviour
         DialogText.text = QuestTexts[currentLike];
         source = GetComponent<AudioSource>();
         dialogue_source = GetComponent<AudioSource>();
+
+        reactionGood.enabled = false;
+        reactionBad.enabled = false;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -71,21 +75,75 @@ public class NpcGO : MonoBehaviour
                 source.Play();
                 UIHearth.fillAmount = (float)currentLike / maxLike;
                 UIpressToGive.SetActive(false);
-
                 Instantiate(ShipPiecePrefab, SpawnPoint.position, SpawnPoint.rotation);
+
                 DialogText.text = QuestTexts[currentLike];
-                dialogue_source.clip = dialogue_clip[UnityEngine.Random.Range(0, dialogue_clip.Length)];
-                dialogue_source.Play();
+                
                 if (currentLike == maxLike)
                 {
                     BeginHelping();
+                    dialogue_source.clip = dialogue_clip[UnityEngine.Random.Range(0, dialogue_clip.Length)];
+                    dialogue_source.Play();
                 }
+                else
+                {
+                    StartCoroutine(GoodReaction());
+                }
+
             }
             else
             {
-
+                StartCoroutine(BadReaction());
             }
              
         }
+    }
+
+    private IEnumerator GoodReaction ()
+    {
+        DialogText.transform.parent.gameObject.SetActive(false);
+        reactionGood.enabled = true;
+
+        yield return new WaitForSeconds(0.3f);
+        reactionGood.preserveAspect = false;
+        yield return new WaitForSeconds(0.3f);
+        reactionGood.preserveAspect = true;
+        yield return new WaitForSeconds(0.3f);
+        reactionGood.preserveAspect = false;
+        yield return new WaitForSeconds(0.3f);
+        reactionGood.preserveAspect = true;
+        yield return new WaitForSeconds(0.3f);
+        reactionGood.preserveAspect = false;
+        yield return new WaitForSeconds(0.3f);
+        reactionGood.preserveAspect = true;
+
+        reactionGood.enabled = false;
+        DialogText.transform.parent.gameObject.SetActive(true);
+
+        dialogue_source.clip = dialogue_clip[UnityEngine.Random.Range(0, dialogue_clip.Length)];
+        dialogue_source.Play();
+
+    }
+
+    private IEnumerator BadReaction()
+    {
+        DialogText.transform.parent.gameObject.SetActive(false);
+        reactionBad.enabled = true;
+
+        yield return new WaitForSeconds(0.3f);
+        reactionBad.preserveAspect = false;
+        yield return new WaitForSeconds(0.3f);
+        reactionBad.preserveAspect = true;
+        yield return new WaitForSeconds(0.3f);
+        reactionBad.preserveAspect = false;
+        yield return new WaitForSeconds(0.3f);
+        reactionBad.preserveAspect = true;
+        yield return new WaitForSeconds(0.3f);
+        reactionBad.preserveAspect = false;
+        yield return new WaitForSeconds(0.3f);
+        reactionBad.preserveAspect = true;
+
+        reactionBad.enabled = false;
+        DialogText.transform.parent.gameObject.SetActive(true);
     }
 }
