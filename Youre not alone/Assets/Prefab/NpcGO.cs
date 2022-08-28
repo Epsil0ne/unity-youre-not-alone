@@ -22,6 +22,9 @@ public class NpcGO : MonoBehaviour
     private AudioSource source;
     private AudioSource dialogue_source;
 
+    public Image reactionGood;
+    public Image reactionBad;
+
     private void Start()
     {
         UIpressToGive.SetActive(false);
@@ -57,25 +60,32 @@ public class NpcGO : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy 
-            && GameManager.player.itemInHand.resType == QuestItem[currentLike])
+        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy )
+            
         {
-            GameManager.player.ItemIsGiven();
-            currentLike += 1;
-            source.clip = audio_drop_item;
-            source.Play();
-            UIHearth.fillAmount = (float)currentLike/maxLike;
-            UIpressToGive.SetActive(false);
-
-            Instantiate(ShipPiecePrefab, SpawnPoint.position, SpawnPoint.rotation);
-            DialogText.text = QuestTexts[currentLike];
-            dialogue_source.clip = dialogue_clip[UnityEngine.Random.Range(0, dialogue_clip.Length)];
-            dialogue_source.Play();
-            if (currentLike == maxLike)
+            if (GameManager.player.itemInHand.resType == QuestItem[currentLike])
             {
-                BeginHelping();
-               
-            }         
+                GameManager.player.ItemIsGiven();
+                currentLike += 1;
+                source.clip = audio_drop_item;
+                source.Play();
+                UIHearth.fillAmount = (float)currentLike / maxLike;
+                UIpressToGive.SetActive(false);
+
+                Instantiate(ShipPiecePrefab, SpawnPoint.position, SpawnPoint.rotation);
+                DialogText.text = QuestTexts[currentLike];
+                dialogue_source.clip = dialogue_clip[UnityEngine.Random.Range(0, dialogue_clip.Length)];
+                dialogue_source.Play();
+                if (currentLike == maxLike)
+                {
+                    BeginHelping();
+                }
+            }
+            else
+            {
+
+            }
+             
         }
     }
 }

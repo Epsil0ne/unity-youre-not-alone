@@ -22,19 +22,15 @@ public class DetroyableGO : MonoBehaviour
     public void IsHit()
     {
         currentHit++;
-        if (currentHit >= numberHitBeforeBreak)
+        if (currentHit == numberHitBeforeBreak)
         {
-
             var a = Instantiate(dropPrefab);
             a.transform.position = new Vector3(transform.position.x, 0.3f, transform.position.z);
-            if (currentHit == numberHitBeforeBreak)
-            {
-                source.clip = Destroy_sounds[UnityEngine.Random.Range(0, Destroy_sounds.Length)];
-                source.Play();
-            }
+            
+            source.clip = Destroy_sounds[UnityEngine.Random.Range(0, Destroy_sounds.Length)];
+            source.Play();
+            
             Destroy(gameObject, 1);
-
-
         }
         else if(currentHit < numberHitBeforeBreak)
         {
