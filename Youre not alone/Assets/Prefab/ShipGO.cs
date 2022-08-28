@@ -6,20 +6,20 @@ using UnityEngine.UI;
 
 public class ShipGO : MonoBehaviour
 {
-  public  int currentPieces ;
-  public  int maxPieces;
+    int currentPieces =0 ;
+    int maxPieces =9;
 
-    public int currentHelp;
-    public int maxHelp ;
+     int currentHelp =0;
+     int maxHelp  =3;
 
     public Image UIPieces;
     public Image UIHelp;
     public Transform[] spawnPoint = new Transform[3];
     public AudioClip[] Audio_spaceship_repair;
+    private AudioSource spaceship_source;
+
     public AudioClip Audio_engine_start;
     public AudioClip Audio_engine_loop;
-    private AudioSource spaceship_source;
-   
 
 
 
@@ -31,6 +31,7 @@ public class ShipGO : MonoBehaviour
         spaceship_source = GetComponent<AudioSource>();
         GetComponent<AudioSource>().loop = true;
     }
+
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger ship");
@@ -40,21 +41,18 @@ public class ShipGO : MonoBehaviour
             currentPieces += 1;
             spaceship_source.clip = Audio_spaceship_repair[UnityEngine.Random.Range(0, Audio_spaceship_repair.Length)];
             spaceship_source.Play();
-<<<<<<< HEAD
-            UIPieces.fillAmount = (float)currentPieces / maxPieces;
-            if (currentPieces == 9f)
+            UIPieces.fillAmount = 0.3f+0.7f*((float)currentPieces/maxPieces);
+
+            if (currentPieces == maxPieces)
             {
                 spaceship_source.clip = Audio_engine_start;
                 spaceship_source.Play();
-                
+
                 spaceship_source.clip = Audio_engine_loop;
                 spaceship_source.PlayDelayed(Audio_engine_start.length);
             }
-           
-=======
-            UIPieces.fillAmount = 0.3f+0.7f*((float)currentPieces/maxPieces);
->>>>>>> 7124c1eecd7c528e5135110404acfe266931e602
         }
+
     }
     private void OnDestroy()
     {
