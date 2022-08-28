@@ -48627,10 +48627,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6116995514656553515, guid: b3abb5485530fe644bf22afcfe327238, type: 3}
-      propertyPath: FootstepAudioVolume
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 6892829248352067738, guid: b3abb5485530fe644bf22afcfe327238, type: 3}
       propertyPath: m_RootOrder
       value: 3
