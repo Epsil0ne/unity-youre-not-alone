@@ -21,6 +21,8 @@ public class ShipGO : MonoBehaviour
     public AudioClip Audio_engine_start;
     public AudioClip Audio_engine_loop;
 
+    public GameObject[] TechnoPrefab;
+
 
 
     private void Start()

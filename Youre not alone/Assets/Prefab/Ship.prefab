@@ -371,6 +371,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a99c16b45ef5cf14688ecce60659edc0, type: 3}
   Audio_engine_start: {fileID: 8300000, guid: f8cf4a73c48bcb14eb92f78475a6ec1c, type: 3}
   Audio_engine_loop: {fileID: 8300000, guid: 691898be2e7c3c4418a7299190a9672b, type: 3}
+  TechnoPrefab:
+  - {fileID: 919132149155446097, guid: 81b0f0282921f3e4bafd598a4e361297, type: 3}
+  - {fileID: 919132149155446097, guid: 696e064f957ccf24d8d3434e46bf7a0a, type: 3}
+  - {fileID: 919132149155446097, guid: 4a084b7cfe69a8f459eb7a775b2ef8fa, type: 3}
 --- !u!65 &7053525916358613411
 BoxCollider:
   m_ObjectHideFlags: 0
