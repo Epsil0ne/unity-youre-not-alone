@@ -80,7 +80,6 @@ GameObject:
   - component: {fileID: 1483541858779615214}
   - component: {fileID: 8455229889152907525}
   - component: {fileID: 8449913875482520223}
-  - component: {fileID: 4596960553966242025}
   m_Layer: 0
   m_Name: Particle Hit
   m_TagString: FxTemporaire
@@ -4781,55 +4780,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &4596960553966242025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059977134558987213}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9205bc1bbacc90040a998067b5643d16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clearBehavior: 0
-  cameraShake:
-    enabled: 1
-    useMainCamera: 1
-    cameras:
-    - {fileID: 0}
-    delay: 0
-    duration: 1
-    shakeSpace: 1
-    shakeStrength: {x: 0.1, y: 0.1, z: 0.1}
-    shakeCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: -1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: -1
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    shakesDelay: 0
-  animatedLights: []
-  fadeOutReference: {fileID: 0}
 --- !u!1 &2963688422785117324
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,10 +5043,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  UIpressToGive: {fileID: 6412940581218892543}
-  UIHearth: {fileID: 3134812212395095515}
-  SpawnPoint: {fileID: 657004132}
-  ShipPiecePrefab: {fileID: 19838791364093593, guid: c089d9e3dd94fd94da79fd140e186881, type: 3}
   QuestTexts:
   - Unfortunately i cant keep my family heated, because i dont have more money to
     buy wood for the fireplace.
@@ -5104,12 +5050,19 @@ MonoBehaviour:
   - More wood please?
   - Thanks for your help, now that my family is safe I'll help you fix your ship
   QuestItem: 000000000000000000000000
-  DialogText: {fileID: 755847529968897455}
-  particleHit: {fileID: 2059977134558987213}
-  audio_drop_item: {fileID: 8300000, guid: f2ccf303df1180c418225a4edaeeea11, type: 3}
   dialogue_clip: []
+  DialogText: {fileID: 755847529968897455}
   reactionGood: {fileID: 667790730359821347}
   reactionBad: {fileID: 1310324792528029824}
+  UIHearth: {fileID: 3134812212395095515}
+  UIpressToGive: {fileID: 6412940581218892543}
+  SpawnPoint: {fileID: 657004132}
+  particleHit: {fileID: 2059977134558987213}
+  ShipPiecePrefab: {fileID: 19838791364093593, guid: c089d9e3dd94fd94da79fd140e186881, type: 3}
+  audio_drop_item: {fileID: 8300000, guid: f2ccf303df1180c418225a4edaeeea11, type: 3}
+  audio_happy: {fileID: 8300000, guid: 8f7e70db7b25f184fae791dcaac4fb31, type: 3}
+  audio_sad: {fileID: 8300000, guid: 067c9eb10aa300b4bb3d679c296599b7, type: 3}
+  audio_hammer: {fileID: 8300000, guid: 03c8e18120a387d43addca9c7f73e732, type: 3}
 --- !u!136 &1988392901092109562
 CapsuleCollider:
   m_ObjectHideFlags: 0

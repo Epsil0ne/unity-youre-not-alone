@@ -1,30 +1,41 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NpcGO : MonoBehaviour
 {
-    public int id;
-    public GameObject UIpressToGive;
-    public Image UIHearth;
     private int currentLike = 0;
     private int maxLike = 3;
-    public Transform SpawnPoint;
-    public GameObject ShipPiecePrefab;
-    public string[] QuestTexts = new string[4];
-    public RessourceType[] QuestItem = new RessourceType[3];
-    public TMP_Text DialogText;
-    public GameObject particleHit;
-    public AudioClip audio_drop_item;
-    public AudioClip[] dialogue_clip;
+
     private AudioSource source;
     private AudioSource dialogue_source;
 
+
+    public int id;
+    public string[] QuestTexts = new string[4];
+    public RessourceType[] QuestItem = new RessourceType[3];
+    public AudioClip[] dialogue_clip;
+
+    [Space]
+    [Header("[References GO]")]
+    public TMP_Text DialogText;
     public Image reactionGood;
     public Image reactionBad;
+    public Image UIHearth;
+    public GameObject UIpressToGive;
+    public Transform SpawnPoint;
+    public GameObject particleHit;
+
+    [Space]
+    [Header("[References folder]")]
+    public GameObject ShipPiecePrefab;
+    public AudioClip audio_drop_item;
+    public AudioClip audio_happy;
+    public AudioClip audio_sad;
+    public AudioClip audio_hammer;
+
 
     private void Start()
     {
@@ -37,35 +48,44 @@ public class NpcGO : MonoBehaviour
         reactionGood.enabled = false;
         reactionBad.enabled = false;
     }
-    void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        
-        if (GameManager.player.itemInHand!=null && GameManager.player.itemInHand.resType != RessourceType.Ship)
+        if (GameManager.player.itemInHand != null && GameManager.player.itemInHand.resType != RessourceType.Ship)
         {
             UIpressToGive.SetActive(true);
         }
-       
     }
+
     private void OnTriggerExit(Collider other)
     {
         UIpressToGive.SetActive(false);
     }
+
     public void BeginHelping()
     {
         transform.SetPositionAndRotation(
-            GameManager.ship.spawnPoint[id].position, 
+            GameManager.ship.spawnPoint[id].position,
             GameManager.ship.spawnPoint[id].rotation);
 
         GameManager.ship.HelpAdded();
 
-        particleHit.SetActive(true);
         
+        particleHit.SetActive(true);
+      //  InvokeRepeating("PlayHammerSound",  0,  1);
+
     }
 
-    void Update()
+    private void PlayHammerSound()
     {
-        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy )
-            
+        source.clip = audio_hammer;
+        source.Play();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("e") && UIpressToGive.activeInHierarchy)
+
         {
             if (GameManager.player.itemInHand.resType == QuestItem[currentLike])
             {
@@ -78,7 +98,7 @@ public class NpcGO : MonoBehaviour
                 Instantiate(ShipPiecePrefab, SpawnPoint.position, SpawnPoint.rotation);
 
                 DialogText.text = QuestTexts[currentLike];
-                
+
                 if (currentLike == maxLike)
                 {
                     BeginHelping();
@@ -89,17 +109,15 @@ public class NpcGO : MonoBehaviour
                 {
                     StartCoroutine(GoodReaction());
                 }
-
             }
             else
             {
                 StartCoroutine(BadReaction());
             }
-             
         }
     }
 
-    private IEnumerator GoodReaction ()
+    private IEnumerator GoodReaction()
     {
         DialogText.transform.parent.gameObject.SetActive(false);
         reactionGood.enabled = true;
@@ -110,6 +128,10 @@ public class NpcGO : MonoBehaviour
         reactionGood.preserveAspect = true;
         yield return new WaitForSeconds(0.3f);
         reactionGood.preserveAspect = false;
+
+        source.clip = audio_happy;
+        source.Play();
+        
         yield return new WaitForSeconds(0.3f);
         reactionGood.preserveAspect = true;
         yield return new WaitForSeconds(0.3f);
@@ -122,7 +144,6 @@ public class NpcGO : MonoBehaviour
 
         dialogue_source.clip = dialogue_clip[UnityEngine.Random.Range(0, dialogue_clip.Length)];
         dialogue_source.Play();
-
     }
 
     private IEnumerator BadReaction()
@@ -136,6 +157,10 @@ public class NpcGO : MonoBehaviour
         reactionBad.preserveAspect = true;
         yield return new WaitForSeconds(0.3f);
         reactionBad.preserveAspect = false;
+
+        source.clip = audio_sad;
+        source.Play();
+
         yield return new WaitForSeconds(0.3f);
         reactionBad.preserveAspect = true;
         yield return new WaitForSeconds(0.3f);

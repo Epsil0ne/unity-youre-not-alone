@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.9, g: 0.60180724, b: 0.45, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.03
+  m_FogDensity: 0.015
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.9386859, g: 0.90466136, b: 0.84687346, a: 1}
@@ -24803,7 +24803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925442314654192, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: CameraDistance
-      value: 9
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2070925442314654192, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
+      propertyPath: ShoulderOffset.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2070925442314654192, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: VerticalArmLength
@@ -24855,11 +24859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 8944336655422409503, guid: f6d148d888ffbf54b9afe9936dfaec1f, type: 3}
       propertyPath: m_LocalRotation.w
