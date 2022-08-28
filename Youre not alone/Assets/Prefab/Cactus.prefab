@@ -150,6 +150,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3625605987090987233, guid: 524d5609b1929ea4881e13e75a00476a, type: 3}
+      propertyPath: m_Size.x
+      value: 4.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625605987090987233, guid: 524d5609b1929ea4881e13e75a00476a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625605987090987233, guid: 524d5609b1929ea4881e13e75a00476a, type: 3}
+      propertyPath: m_Size.z
+      value: 5.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625605987090987233, guid: 524d5609b1929ea4881e13e75a00476a, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7907567228279928129, guid: 524d5609b1929ea4881e13e75a00476a, type: 3}
       propertyPath: m_Name
       value: Ressource fruit

@@ -11,6 +11,22 @@ PrefabInstance:
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1196719702376324587, guid: bcab06d46ef09f44d83676d715135488, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 200.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196719702376324587, guid: bcab06d46ef09f44d83676d715135488, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 200.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196719702376324587, guid: bcab06d46ef09f44d83676d715135488, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 200.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196719702376324587, guid: bcab06d46ef09f44d83676d715135488, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2824955089730736718, guid: bcab06d46ef09f44d83676d715135488, type: 3}
       propertyPath: m_Mesh
       value: 
