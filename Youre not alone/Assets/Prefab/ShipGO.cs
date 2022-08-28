@@ -22,8 +22,8 @@ public class ShipGO : MonoBehaviour
 
     private void Start()
     {
-        UIPieces.fillAmount = (float)currentPieces / maxPieces;
-        UIHelp.fillAmount = (float)currentHelp/maxHelp;
+        UIPieces.fillAmount = 0.3f + 0.7f * ((float)currentPieces / maxPieces);
+        UIHelp.fillAmount = 0.1f + 0.9f * ((float)currentHelp/maxHelp);
         GameManager.ship = this;
         spaceship_source = GetComponent<AudioSource>();
     }
@@ -36,7 +36,7 @@ public class ShipGO : MonoBehaviour
             currentPieces += 1;
             spaceship_source.clip = Audio_spaceship_repair[UnityEngine.Random.Range(0, Audio_spaceship_repair.Length)];
             spaceship_source.Play();
-            UIPieces.fillAmount = (float)currentPieces/maxPieces;
+            UIPieces.fillAmount = 0.3f+0.7f*((float)currentPieces/maxPieces);
         }
 
     }
@@ -48,6 +48,6 @@ public class ShipGO : MonoBehaviour
     internal void HelpAdded()
     {
         currentHelp += 1;
-        UIHelp.fillAmount = (float)currentHelp / maxHelp;
+        UIHelp.fillAmount = 0.1f + 0.9f * ((float)currentHelp / maxHelp);
     }
 }
