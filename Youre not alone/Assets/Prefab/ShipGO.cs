@@ -29,7 +29,7 @@ public class ShipGO : MonoBehaviour
         UIHelp.fillAmount = 0.1f + 0.9f * ((float)currentHelp/maxHelp);
         GameManager.ship = this;
         spaceship_source = GetComponent<AudioSource>();
-        GetComponent<AudioSource>().loop = true;
+       
     }
 
     void OnTriggerEnter(Collider other)
