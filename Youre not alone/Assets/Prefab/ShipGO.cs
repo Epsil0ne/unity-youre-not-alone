@@ -18,8 +18,6 @@ public class ShipGO : MonoBehaviour
     public AudioClip[] Audio_spaceship_repair;
     private AudioSource spaceship_source;
 
-    public AudioClip Audio_engine_start;
-    public AudioClip Audio_engine_loop;
 
     public GameObject[] TechnoPrefab;
 
@@ -56,11 +54,6 @@ public class ShipGO : MonoBehaviour
         {
             GameManager.EndCondition++;
 
-            spaceship_source.clip = Audio_engine_start;
-            spaceship_source.Play();
-
-            spaceship_source.clip = Audio_engine_loop;
-            spaceship_source.PlayDelayed(Audio_engine_start.length);
         }
     }
 
@@ -72,6 +65,7 @@ public class ShipGO : MonoBehaviour
         if (currentHelp == maxHelp)
         {
             GameManager.EndCondition++;
+            
         }
     }
 

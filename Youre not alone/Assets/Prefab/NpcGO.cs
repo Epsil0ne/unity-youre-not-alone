@@ -34,7 +34,8 @@ public class NpcGO : MonoBehaviour
     public AudioClip audio_drop_item;
     public AudioClip audio_happy;
     public AudioClip audio_sad;
-    public AudioClip audio_hammer;
+    public AudioClip[] audio_hammer;
+    public AudioSource Hammer_source;
 
 
     private void Start()
@@ -72,14 +73,14 @@ public class NpcGO : MonoBehaviour
 
         
         particleHit.SetActive(true);
-      //  InvokeRepeating("PlayHammerSound",  0,  1);
+        InvokeRepeating("PlayHammerSound",  0,  1);
 
     }
 
     private void PlayHammerSound()
     {
-        source.clip = audio_hammer;
-        source.Play();
+        Hammer_source.clip = audio_hammer[UnityEngine.Random.Range(0, audio_hammer.Length)];
+        Hammer_source.Play();
     }
 
     private void Update()
